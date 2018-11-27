@@ -1,0 +1,75 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: grey;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+nav {
+  width: 100%;
+  margin: 100px 10px 10px 10px;
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  justify-content: center;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.button {
+  font-size: 1.2em;
+  font-weight: 700;
+  padding-top: 5px;
+  margin: 10px;
+  width: 100px;
+  height: 30px;
+  background-color: red;
+  border: 2px solid black;
+  text-align: center;
+  text-decoration: none;
+  vertical-align: middle;
+}
+
+.button:hover {
+  background-color: #f5b5b5;
+}
+
+.stopwatch {
+  font-size: 5em;
+  display: flex;
+  width: 400px;
+  text-align: center;
+  flex-direction: column;
+  justify-content: center;
+  background-color: yellow;
+}
+
+li {
+  font-size: 1.5em;
+  display: block;
+  margin: 10px;
+  width: 200px;
+  text-align: center;
+  flex-direction: column;
+  justify-content: center;
+  border: 2px solid black;
+}
+
+li button {
+  background-color: blue;
+  color: white;
+  padding: 5px;
+  margin: 5px;
+}
+
+/*# sourceMappingURL=style.css.map */
