@@ -7,11 +7,10 @@ class Stopwatch extends React.Component {
             times: {
                 minutes: 0,
                 seconds: 0,
-                miliseconds: 0,
-                running: false
-            }
+                miliseconds: 0,     
+            },
+            running: false
         }
-        // this.running = false;
     }
   
     reset() {
@@ -23,13 +22,17 @@ class Stopwatch extends React.Component {
         }
       });
     }
-    
-    print() {
-        this.display.innerHTML = this.format(this.times);
-    }
 
-    format(times) {
-        return `${pad0(times.minutes)} : ${pad0(times.seconds)} : ${pad0(Math.floor(times.miliseconds))}`;
+    format() {
+        return `${pad0(this.state.times.minutes)} : ${pad0(this.state.times.seconds)} : ${pad0(Math.floor(this.state.times.miliseconds))}`;
+
+        function pad0(value) {
+            let result = value.toString();
+                if (result.length < 2) {
+                    result = '0' + result;
+                }
+                return result;
+            }
     }
 
     start() {
@@ -57,18 +60,12 @@ class Stopwatch extends React.Component {
           times.seconds = 0;
         }
         this.setState({times});
-      }
+    }
     
     stop() {
         this.running = false;
         clearInterval(this.watch);
     }
-
-    resetstoper() {
-        this.reset();
-        this.print()
-      }
-
 
     render() {
         return (
@@ -83,14 +80,6 @@ class Stopwatch extends React.Component {
         );
     }
 }
-
-function pad0(value) {
-let result = value.toString();
-    if (result.length < 2) {
-        result = '0' + result;
-    }
-    return result;
-    }
 
 const app = document.getElementById('app')
 ReactDOM.render(<Stopwatch />, app);
